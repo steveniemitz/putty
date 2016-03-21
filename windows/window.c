@@ -4204,6 +4204,10 @@ static int TranslateKey(UINT message, WPARAM wParam, LPARAM lParam,
 	    request_paste(NULL);
 	    return 0;
 	}
+	if (left_alt && wParam == 'V') {
+		request_paste(NULL);
+		return 0;
+	}
 	if (left_alt && wParam == VK_F4 && conf_get_int(conf, CONF_alt_f4)) {
 	    return -1;
 	}
